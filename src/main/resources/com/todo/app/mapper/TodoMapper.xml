@@ -8,7 +8,14 @@
 	</select>
 
 	<select id="selectIncomplete" resultType="com.todo.app.entity.Todo">
-		select * from todo_items where done_flg = 0
+		select *,
+			case when time_limit - current_date <![CDATA[<]]> 0 then '予定を' || abs(time_limit - current_date) || '日経過'
+				when time_limit - current_date = 0 then '今日の予定'
+				when time_limit - current_date <![CDATA[>]]> 0 then '予定まで' || time_limit - current_date || '日'
+			end
+		as limit
+		from todo_items where done_flg = 0
+		order by time_limit;
 	</select>
 	
 	<select id="selectComplete" resultType="com.todo.app.entity.Todo">
