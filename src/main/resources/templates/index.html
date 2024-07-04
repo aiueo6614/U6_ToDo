@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>TodoApp</title>
 <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+<script th:src="@{/js/script.js}"></script>
 </head>
 <body>
 	<h1>TodoList</h1>
@@ -33,8 +34,12 @@
 		<input type="submit" value="追加"/>
 	</form>
 
-	<form method="post" th:action="@{/delete}">
+	<form method="post" th:action="@{/delete}" onSubmit="return deletecomp()">
 		<input type="submit" value="完了済みを削除"/>
+	</form>
+	
+	<form method="post" th:action="@{/deleteall}" onSubmit="return deleteall()">
+		<input type="submit" value="全てを削除"/>
 	</form>
 	
 </body>

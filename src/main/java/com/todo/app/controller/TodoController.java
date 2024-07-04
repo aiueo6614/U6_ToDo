@@ -42,5 +42,11 @@ public class TodoController {
     	todoMapper.delete();
     	return "redirect:/";
     }
+    
+    @RequestMapping(value="/deleteall")
+    public String deleteall() {
+    	todoMapper.deleteall();
+    	return "redirect:/";
+    }
 
 }

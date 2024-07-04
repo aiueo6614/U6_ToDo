@@ -39,4 +39,8 @@
 		delete from todo_items where done_flg = 1
 	</delete>
 	
+	<delete id="deleteall" parameterType="com.todo.app.entity.Todo">
+		delete from todo_items
+	</delete>
+	
 </mapper>
