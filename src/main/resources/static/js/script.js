@@ -1,5 +1,5 @@
-function deletecomp(){
-	if(window.confirm('完了済みタスクを削除します')){
+function deletecomp() {
+	if(window.confirm('完了済みタスクを削除します')) {
 		return true;
 	}
 	else{
@@ -7,9 +7,9 @@ function deletecomp(){
 	}
 }
 
-function deleteall(){
-	if(window.confirm('すべての内容を削除します')){
-		if(window.confirm('本当に実行しますか？')){
+function deleteall() {
+	if(window.confirm('すべての内容を削除します')) {
+		if(window.confirm('本当に実行しますか？')) {
 			return true;
 		}
 		else{
